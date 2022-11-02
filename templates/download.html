@@ -1,0 +1,34 @@
+<style>
+    .center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 900px;
+	height: 600px;
+	border-radius: 3px;
+	box-shadow: 8px 10px 15px 0 rgba(0, 0, 0, 0.2);
+	background: #fff;
+	display: flex;
+	align-items: center;
+	/* justify-content: space-evenly; */
+	flex-direction: column;
+}
+
+</style>
+
+<div class="center">
+    <h1>Your Downloads</h1>
+    <p>
+        The files are named based on the date time format, to donwload the latest check the time in the file. <br/>
+        <b>
+            The latest file will be always at the top of the stack.
+        </b></p>
+    <br />
+    {% for filename in files %}
+    <a href="{{ url_for('download_file', filename=filename) }}">{{ filename }}</a><br />
+    {% endfor %}
+</div>
+
+
+
