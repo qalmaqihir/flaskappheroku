@@ -23,9 +23,10 @@ def UniProt_data_extraction(UniProt_ID):
     # retry = Retry(connect=3, backoff_factor=0.5)
     retry = Retry(total=3,connect=4, read=4,backoff_factor=0.5, allowed_methods=None, status_forcelist=[429, 500, 502, 503, 504])
     adapter = HTTPAdapter(max_retries=retry)
+    session.mount("http://", adapter)
     session.mount("https://", adapter)
-    session = requests.get(Uniprot_API+UniProt_ID)  # request to uniprot
-    uniprot_API_json=session.json()
+    response = session.get(Uniprot_API+UniProt_ID)  # request to uniprot
+    uniprot_API_json=response.json()
 
     try: 
         if 'genes' in uniprot_API_json:   # all these comming if conditions on returned datastructure inside 'uniprot_API_json'
