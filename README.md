@@ -18,5 +18,5 @@ open your terminal in the directory you cloned this repo and activate your virtu
  
  - you are now in the final stage:  
  `flask run`  
- 
-copy the ip and open the app in your browser  
+ * Running on http://127.0.0.1:5000  
+copy this from your terminl and open the app in your browser  
