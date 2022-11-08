@@ -2,7 +2,7 @@
 
 ## How to use:
 - first clone the repo  
-`git clone `  
+`git clone https://github.com/qalmaqihir/flaskappheroku.git `  
   
 - then create a virtual environment    
 open your terminal in the directory you cloned this repo and create a virtual env using :    
